@@ -1,8 +1,9 @@
 // outsource
 import { NgModule } from '@angular/core';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 import { RootModule, UIRouterModule } from "@uirouter/angular";
-// 
+//
 import { LayoutComponent } from './layout.component';
 // app states
 import { homeState } from './home/home.state';
@@ -15,8 +16,8 @@ import { loginState } from './login/login.state';
  *
  */
 export const routing: RootModule = {
-    // useHash: false, // html5mode - without # 
-    useHash: true, // with # 
+    // useHash: false, // html5mode - without #
+    useHash: true, // with #
     otherwise: homeState.url,
     states: [
         homeState,
@@ -39,7 +40,8 @@ export const routing: RootModule = {
     // define dependensiec for all page components
     imports: [
         CommonModule,
-        UIRouterModule.forRoot(routing)
+        UIRouterModule.forRoot(routing),
+        NgbModule
     ],
     // define outgoing modules
     exports: [
