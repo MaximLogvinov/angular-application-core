@@ -1,0 +1,67 @@
+* {
+
+    /**
+     * Example of using "soc-link-sh"
+     *
+     * use decorators to add necessary social network link
+     *
+     * template example for Facebook
+     * <a href="" class="soc-link-sh soc-facebook"> Facebook </a>
+     *
+     */
+    .soc-link-sh {
+        @soc-link-size: 30px;//local variable
+
+        display: inline-block;
+        background-color: @black;
+        width: @soc-link-size;
+        height: @soc-link-size;
+        color: @white;
+        font-family: 'FontAwesome';
+        font-size: 18px;
+        line-height: @soc-link-size;//for center vertical-align
+        text-align: center;
+        margin-left: 5px;
+
+
+        &:hover {
+            color: @white;
+            text-decoration: none;
+        }
+
+        &:focus, &:active, &.active {
+            text-decoration: none;
+            outline: none;
+        }
+
+        /**
+         *
+         * list of decorators
+         * add acceptable social icon and special unique background color on link's hover
+         *
+         */
+        &.soc-facebook { .soc-by-awesome-glyph ("\f09a", @blue); }
+        &.soc-twitter { .soc-by-awesome-glyph ("\f099", @light-blue); }
+        &.soc-pinterest { .soc-by-awesome-glyph ("\f0d2", @pink); }
+        &.soc-google-plus { .soc-by-awesome-glyph ("\f0d5", @orange); }
+        &.soc-instagram { .soc-by-awesome-glyph ("\f16d", @purple); }
+        &.soc-youtube { .soc-by-awesome-glyph ("\f167", @red); }
+
+    }
+
+    /**
+     *
+     * mixin for creating decorators
+     * allows to set icon and background color on link's hover
+     *
+     */
+    .soc-by-awesome-glyph ( @glyph, @bg-color ) {
+        &:before {
+            content: @glyph;
+        }
+
+        &:hover {
+            background-color: @bg-color;
+        }
+    }
+}

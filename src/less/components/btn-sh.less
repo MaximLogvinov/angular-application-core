@@ -1,0 +1,73 @@
+* {
+
+    /*
+     * Example of using btn-sh
+     *
+     * template example
+     * <button type="button" class="btn btn-sh btn-sh-dark btn-sh-lg">Submit</button>
+     * <button type="button" class="btn btn-sh btn-sh-light">Sign up</button>
+     */
+    .btn {//bootstrap template class
+        &.btn-sh {
+            border: 1px solid @black;
+            border-radius: 0;
+            font-size: 14px;
+            letter-spacing: 1px;
+            height: 30px;
+
+            /*
+             * color decorators
+             */
+            &.btn-sh-light {
+                background-color: @white;
+                color: @black;
+
+                &:hover {
+                    background-color: @dim-grey;
+                    color: @white;
+                }
+
+                &:active, &.active {
+                    background-color: @black;
+                    color: @white;
+                }
+
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            &.btn-sh-dark {
+                background-color: @black;
+                color: @white;
+
+                &:hover {
+                    background-color: @dim-grey;
+                    color: @white;
+                }
+
+                &:active, &.active {
+                    background-color: @white;
+                    color: @black;
+                }
+
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            /*
+             * size decorators
+             */
+            &.btn-sh-sm {
+                width: 100px;
+            }
+            &.btn-sh-md {
+                width: 200px;
+            }
+            &.btn-sh-lg {
+                width: 100%;
+            }
+        }
+    }
+}

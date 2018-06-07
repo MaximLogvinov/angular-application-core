@@ -33,6 +33,19 @@
 @lighten-purple:    #702277;
 @dark-purple:       #7A3DCE;
 @brown:             #292929;
+
+// style guide color
+@light-grey:        #f1f1f1;
+@dim-grey:          #666666;
+@muted-black:       #333333;
+
+// TEXT
+@base-text:         @muted-black;
+@heading-text:      @black;
+@inverse-text:      #F0F0F0;
+@muted-text:        @grey;
+@alm-muted-text:    #4b4b4b; //@grey-shade-7
+@palliated-text:    #C6C6C6;
 //== Scaffolding
 //
 //## Settings for some of the most global styles.
@@ -53,9 +66,11 @@
 @font-family-extra:      /*Roboto,*/ "Roboto-Condensed";
 @font-family-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
 @font-family-serif:       Georgia, "Times New Roman", Times, serif;
+@font-family-hind:        Hind, @font-family-sans-serif;
+@font-family-freeserif:   FreeSerif, @font-family-serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
-@font-family-base:        @font-family-extra, @font-family-sans-serif;
+@font-family-base:        @font-family-hind;
 
 @font-size-base:          14px;
 @font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
@@ -83,7 +98,7 @@
 @line-height-computed:    floor((@font-size-base * @line-height-base)); // ~20px
 
 //** By default, this inherits from the `<body>`.
-@headings-font-family:    @font-family-base;
+@headings-font-family:    @font-family-freeserif;
 @headings-font-weight:    @font-weight-light;
 @headings-line-height:    1.1;
 @headings-color:          inherit;
