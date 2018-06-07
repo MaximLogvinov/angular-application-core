@@ -18,7 +18,8 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "dft",
       "styles": [
-        "less/index.less"
+          "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+          "less/index.less"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
