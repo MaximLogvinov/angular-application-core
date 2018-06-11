@@ -1,10 +1,12 @@
 // outsource
 import { NgModule } from '@angular/core';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 import { RootModule, UIRouterModule } from "@uirouter/angular";
 //
 import { LayoutComponent } from './layout.component';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
 // app states
 import { homeState } from './home/home.state';
 import { loginState } from './login/login.state';
@@ -34,14 +36,16 @@ export const routing: RootModule = {
     // define list of all page components
     declarations: [
         LayoutComponent,
+        HeaderComponent,
+        FooterComponent,
         homeState.component,
-        loginState.component,
+        loginState.component
     ],
     // define dependensiec for all page components
     imports: [
         CommonModule,
         UIRouterModule.forRoot(routing),
-        NgbModule
+        NgbModule.forRoot()
     ],
     // define outgoing modules
     exports: [

@@ -1,11 +1,9 @@
 // outsource
 import { NgModule } from '@angular/core';
-import { Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 // app
 import { LayoutModule } from './states/layout.module';
 import { LayoutComponent } from './states/layout.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 /**
  * Root application module
@@ -16,9 +14,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     bootstrap: [ LayoutComponent ],
     imports: [
         LayoutModule,
-        BrowserModule,
-        NgbModule.forRoot()
+        BrowserModule
     ],
     providers: [],
 })
-export class AppModule { }
+export class AppModule {}
