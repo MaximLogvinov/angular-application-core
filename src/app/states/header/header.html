@@ -1,0 +1,146 @@
+<div class="container-fluid fixed-top bg-white">
+    <div class="row">
+        <!-- visible only on big desktops -->
+        <div class="col-5 d-none d-sm-block">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a
+                        href="javascript:void(0);"
+                        class="nav-link d-link"
+                            >
+                        Ukraine
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <form id="localCurrency" name="countryOptions">
+                        <div class="form-group">
+                            <select
+                                name="currencyUnit"
+                                class="form-control fontInSelect alignCurrencyItem"
+                                    >
+                                <option>USD $</option>
+                                <option>EUR &euro;</option>
+                                <option>HKD $</option>
+                                <option>GPB $</option>
+                            </select>
+                        </div>
+                    </form>
+                </li>
+            </ul>
+        </div>
+        <div class="col-7 d-none d-sm-block">
+            <ul class="nav nav justify-content-end">
+                <li class="nav-item">
+                    <a
+                        href="javascript:void(0);"
+                        class="nav-link d-link"
+                            >
+                        Sign in
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a
+                        href="javascript:void(0);"
+                        class="nav-link d-link"
+                            >
+                        My Account
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a
+                        class="nav-link d-link"
+                        href="javascript:void(0);"
+                            >
+                        Wish list
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-12 d-none d-sm-block">
+            <div class="text-center">
+                <a class="h1 d-link" href="javascript:void(0);">
+                    dFusion shop
+                </a>
+            </div>
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link d-link" href="javascript:void(0);">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link d-link" href="javascript:void(0);">SHOP</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link d-link" href="javascript:void(0);">INFO</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link d-link" href="javascript:void(0);">ABOUT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link d-link" href="javascript:void(0);">CONTACTS</a>
+                </li>
+            </ul>
+        </div>
+        <!-- For small desktops -->
+        <div class="col-12 d-block d-sm-none">
+            <ul class="nav justify-content-center bg-white">
+                <li class="nav-item">
+                    <a class="nav-link d-link" href="javascript:void(0);">MY ACCOUNT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link d-link" href="javascript:void(0);">WISH LIST</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link d-link" href="javascript:void(0);">SEARCH</a>
+                </li>
+            </ul>
+            <nav class="navbar navbar-light bg-white">
+                <button
+                    type="button"
+                    class="navbar-toggle navbar-toggle-left bag-btn-style"
+                        >
+                    <i class="fa fa-shopping-bag"></i>
+                </button>
+                <a
+                    href="javascript:void(0);"
+                    class="navbar-brand mx-auto h3"
+                        >
+                    dFusion shop
+                </a>
+                <button
+                    type="button"
+                    aria-expanded="false"
+                    data-target="#navbarsDefault"
+                    aria-controls="navbarsDefault"
+                    aria-label="Toggle navigation"
+                    class="navbar-toggler hidden-sm-up"
+                    (click)="vm.isNavbarCollapsed = !vm.isNavbarCollapsed"
+                        >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div
+                    id="navbarsDefault"
+                    class="collapse navbar-collapse"
+                    [ngbCollapse]="vm.isNavbarCollapsed"
+                        >
+                    <ul class="navbar-nav text-center">
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0);">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0);">SHOP</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0);">INFO</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0);">ABOUT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0);">CONTACTS</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>

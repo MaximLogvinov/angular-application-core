@@ -22,3 +22,6 @@ dist
 
 # files marked as "local"
 *local.*
+
+# files in .idea directory
+.idea

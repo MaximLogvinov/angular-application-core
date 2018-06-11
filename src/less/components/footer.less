@@ -1,0 +1,40 @@
+#footer {
+    // local variables
+    @footer-height: 100px;
+    @footer-backround-color: @light-grey;
+
+    background-color: @footer-backround-color;
+    min-height: @footer-height;
+
+    #sign-up-element {
+        background-color: @white;
+
+        .ft-signup {
+            max-width: 350px;
+            height: 30px;//hide bootstrap default style
+            border-radius: 0;//hide bootstrap default style
+        }
+    }
+
+    .ft-heading-link {
+        color: @black;
+        position: relative;
+
+        &:hover { //hide bootstrap default style
+            text-decoration: none;
+        }
+
+        &:focus, &:active, &.active { //hide bootstrap default style
+            text-decoration: none;
+            outline: none;
+        }
+    }
+
+    .footer-divider {
+        border-top: 2px solid @footer-backround-color;
+    }
+
+    .footer-content-divider {
+        border-top: 2px solid @black;
+    }
+}

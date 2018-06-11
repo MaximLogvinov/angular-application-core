@@ -1,0 +1,46 @@
+#header {
+    background-color: @white;
+    // header fixed to top
+    // setting header height to avoid main section overlay by header
+    // header size on big desktops
+    height: 121px;
+    // header size on small desktops
+    @media (max-width: 576px) {
+        height: 92px;
+    }
+
+    #localCurrency {
+        // Problems with <select> element
+
+        // to align select element
+        .alignCurrencyItem {
+            margin-top: -2px;
+        }
+
+        // select ignores default font, setting default one
+        .fontInSelect {
+            font: 400 14px Hind;
+        }
+
+        // rewriting common bootstrap style for select element
+        .form-control {
+            border: 0;
+            &:focus{
+                box-shadow: none;
+            }
+        }
+    }
+
+    .bag-btn-style {
+        border: transparent;
+        background-color: transparent;
+    }
+
+    // replace navbar toggle to the left side
+    .navbar-toggle-left {
+        float: right;
+        margin-right: 0;
+        margin-left: 15px;
+    }
+}
+
