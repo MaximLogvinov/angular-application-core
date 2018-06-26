@@ -1,5 +1,9 @@
 // outsource
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
+
+// services
+import { AuthService } from '../services/authentication.service';
 
 /**
  * layout component
@@ -10,4 +14,14 @@ import { Component } from '@angular/core';
     selector: '[id="layout"]',
     templateUrl: './layout.html',
 })
-export class LayoutComponent {};
+export class LayoutComponent implements OnInit {
+    constructor( private authService: AuthService, private toastr: ToastrService ) {}
+    ngOnInit() {
+        // validation of the session
+        if ( this.authService.restoreSession() ) {
+            this.toastr.success( 'Hello user!');
+        } else {
+            this.toastr.info( 'You can authorize to have more capabilities.');
+        }
+    }
+}
