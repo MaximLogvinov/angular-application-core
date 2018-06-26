@@ -26,16 +26,59 @@
                         </div>
                     </form>
                 </li>
+                <li class="nav-item" *ngIf="vm.user">
+                    <p>
+                        Hello User! {{ vm.user.userName }}
+                    </p>
+                </li>
             </ul>
         </div>
         <div class="col-7 d-none d-sm-block">
             <ul class="nav nav justify-content-end">
-                <li class="nav-item">
+                <li class="nav-item" *ngIf="vm.user">
+                    <div ngbDropdown class="d-inline-block">
+                        <a
+                            id="userMenu"
+                            role="button"
+                            ngbDropdownToggle
+                            class="nav-link d-link"
+                                >
+                            Menu
+                        </a>
+                        <div ngbDropdownMenu aria-labelledby="userMenu">
+                            <a
+                                role="button"
+                                class="nav-link d-link"
+                                href="javascript:void(0);"
+                                    >
+                                Invite friends
+                            </a>
+                            <a
+                                role="button"
+                                class="nav-link d-link"
+                                href="javascript:void(0);"
+                                    >
+                                Wish list
+                            </a>
+                            <a
+                                role="button"
+                                class="nav-link d-link"
+                                (click)="logOut()"
+                                href="javascript:void(0);"
+                                    >
+                                Log Out
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item" *ngIf="!vm.user">
                     <a
-                        href="javascript:void(0);"
+                        role="button"
                         class="nav-link d-link"
+                        (click)="openFormModal()"
+                        href="javascript:void(0);"
                             >
-                        Sign in
+                        Log In
                     </a>
                 </li>
                 <li class="nav-item">
@@ -64,7 +107,12 @@
             </div>
             <ul class="nav justify-content-center">
                 <li class="nav-item">
-                    <a class="nav-link d-link" href="javascript:void(0);">HOME</a>
+                    <a
+                        uiSref="home"
+                        class="nav-link d-link"
+                            >
+                        HOME
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link d-link" href="javascript:void(0);">SHOP</a>
@@ -124,7 +172,12 @@
                         >
                     <ul class="navbar-nav text-center">
                         <li class="nav-item">
-                            <a class="nav-link" href="javascript:void(0);">HOME</a>
+                            <a
+                                class="nav-link"
+                                href="javascript:void(0);"
+                                    >
+                                HOME
+                            </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="javascript:void(0);">SHOP</a>
