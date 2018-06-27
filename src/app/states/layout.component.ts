@@ -18,10 +18,14 @@ export class LayoutComponent implements OnInit {
     constructor( private authService: AuthService, private toastr: ToastrService ) {}
     ngOnInit() {
         // validation of the session
-        if ( this.authService.restoreSession() ) {
-            this.toastr.success( 'Hello user!');
+        if ( !this.authService.restoreSession() ) {
+            setTimeout( () => {
+                this.toastr.info( 'You can authorize to have more capabilities.' );
+            });
         } else {
-            this.toastr.info( 'You can authorize to have more capabilities.');
+            setTimeout( () => {
+                this.toastr.success( 'Hello user!' );
+            });
         }
     }
 }

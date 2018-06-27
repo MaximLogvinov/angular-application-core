@@ -1,7 +1,6 @@
 // outsource
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { ToastrService } from 'ngx-toastr';
+// import { HttpClient } from '@angular/common/http';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 // services
@@ -10,7 +9,7 @@ import { AuthService } from '../../services/authentication.service';
 @Component({
     selector: '[id="authentication-modal"]',
     templateUrl: './authentication.modal.html',
-    providers: [ HttpClient ]
+    // providers: [ HttpClient ]
 })
 
 export class authenticationModal implements OnInit {
@@ -21,9 +20,8 @@ export class authenticationModal implements OnInit {
     };
     constructor(
         public activeModal: NgbActiveModal,
-        private http: HttpClient,
-        public authService: AuthService,
-        private toastr: ToastrService ) {}
+        public authService: AuthService
+        ) {}
         // user log in
     logIn () {
         console.log( this.auth );
@@ -32,12 +30,12 @@ export class authenticationModal implements OnInit {
     // to close modal
     closeModal() {
         this.activeModal.close();
+        // clean error message after closing modal window
         this.authService.errorMessage = null;
     }
     ngOnInit() {
         // listening to the login event
         this.authService.loginEvent.subscribe(() => {
-            this.toastr.success('You are successfully authorised.', 'Hello user!');
             this.activeModal.close();
         });
     }

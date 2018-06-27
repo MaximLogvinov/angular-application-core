@@ -93,8 +93,9 @@ export class AuthService {
         return this.http
             .get('http://192.168.0.19:5604/flask/users/self')
             .map( data => {
-                console.log( new User( data ) );
-                return new User( data );
+                const user = new User( data );
+                console.log( user );
+                return user;
             })
             .pipe(
                 retry(2), // retry a failed request up to 2 times
