@@ -27,8 +27,9 @@
                  }"
                 pattern="^.{2,}[@]{1}[\w\.\S]{2,}[\.]{1}[A-Za-z]{2,}$"
                     />
+            <!--Error report-->
             <div
-                class="invalid-tooltip"
+                class="text-danger position-absolute"
                 *ngIf="email.invalid && email.touched"
                     >
                 <div *ngIf="email.errors.required">
@@ -38,6 +39,8 @@
                     Wrong email format. Example: hello@gmail.com
                 </div>
             </div>
+            <!--To set place error report -->
+            <div class="offset-top-4"></div>
         </div>
         <div class="form-group">
             <label>Password</label>
@@ -54,12 +57,15 @@
                     'is-valid': (password.valid && password.touched)
                  }"
                     />
+            <!--Error report-->
             <div
-                class="invalid-tooltip"
+                class="text-danger position-absolute"
                 *ngIf="password.invalid && (password.dirty || password.touched)"
                     >
                 Password must be at least 8 characters long.
             </div>
+            <!--To set place error report -->
+            <div class="offset-top-4"></div>
         </div>
         <div class="form-group">
             <button
