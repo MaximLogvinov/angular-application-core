@@ -10,6 +10,7 @@ import { User } from '../../model/user.model';
 
 // modal
 import { authenticationModal } from '../authentication.modal/authentication.modal.component';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
     selector: '[id="header"]',
@@ -26,7 +27,11 @@ export class HeaderComponent implements OnInit {
         isNavbarCollapsed: true,
         errorMsg: '', // error message handler variable
     };
-    constructor ( private modalService: NgbModal, public authService: AuthService  ) {}
+    constructor (
+        private modalService: NgbModal,
+        public authService: AuthService,
+        private toastr: ToastrService
+    ) {}
 
     openFormModal() {
         const modalRef = this.modalService.open( authenticationModal, { backdrop: 'static' } );
@@ -42,7 +47,7 @@ export class HeaderComponent implements OnInit {
     }
     ngOnInit() {
         // record user if user was authorized
-        if (this.authService.isAuthorized()) {
+        if ( this.authService.isAuthorized() ) {
             this.authService.getUser().subscribe(
                 response =>  this.vm.user = response,
                 error => this.vm.errorMsg = error
@@ -55,9 +60,15 @@ export class HeaderComponent implements OnInit {
                 response => this.vm.user = response,
                 error => this.vm.errorMsg = error
             );
+            this.toastr.success('You are successfully authorised.', 'Hello user!');
         });
         // listen to logoutEvent
         this.authService.logoutEvent.subscribe(() => this.vm.user = null);
         console.log(this.vm.user);
+
+        // validation of the session
+        if ( !this.authService.restoreSession() ) {
+            this.vm.user = null;
+        }
     }
 }
