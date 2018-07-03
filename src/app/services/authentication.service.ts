@@ -9,6 +9,7 @@ import {catchError, retry} from 'rxjs/operators';
 
 // user model
 import { User } from '../model/user.model';
+//import { Member } from '../model/item.model';
 
 @Injectable()
 export class AuthService {
@@ -138,5 +139,26 @@ export class AuthService {
                 return false;
             }
         }
+    }
+    public getUserData( pageNumber ) {
+        const credentials = {
+            'pagination': {
+                'page': pageNumber - 1,
+                'size': 10,
+                'sort': 'name,asc'
+            },
+            'study_id': 0
+        };
+        return this.http
+            .post(
+                'http://192.168.0.19:5604/flask/crf/filter',
+                credentials )
+            .map( data => {
+                    console.log(data);
+                    return data;
+                })
+            .pipe(
+                retry(3) // retry a failed request up to 3 times
+            );
     }
 }

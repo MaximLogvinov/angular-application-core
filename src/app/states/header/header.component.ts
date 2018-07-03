@@ -4,13 +4,13 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 // services
 import { AuthService } from '../../services/authentication.service';
+import { ToastrService } from 'ngx-toastr';
 
 // models
 import { User } from '../../model/user.model';
 
 // modal
 import { authenticationModal } from '../authentication.modal/authentication.modal.component';
-import { ToastrService } from 'ngx-toastr';
 
 @Component({
     selector: '[id="header"]',

@@ -6,7 +6,7 @@ export class User {
     public finishedTutorial: true;
     public companyt_name: string;
     public studySubjectLabel: string;
-    constructor( data ){
+    constructor( data ) {
         this.id = data.id || 1;
         this.firstName = data.first_name || '';
         this.lastName = data.last_name || '';
