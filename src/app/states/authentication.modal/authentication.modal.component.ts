@@ -35,8 +35,8 @@ export class authenticationModal implements OnInit {
     }
     ngOnInit() {
         // listening to the login event
-        this.authService.loginEvent.subscribe(() => {
-            this.activeModal.close();
-        });
+        // this.authService.loginEvent.subscribe(() => {
+        //     this.activeModal.close();
+        // });
     }
 }

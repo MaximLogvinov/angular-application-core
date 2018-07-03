@@ -17,6 +17,7 @@ import { authenticationModal } from './authentication.modal/authentication.modal
 // app states
 import { homeState } from './home/home.state';
 import { loginState } from './login/login.state';
+import { userListState } from './user-list/user-list.state';
 
 
 /**
@@ -31,6 +32,7 @@ export const routing: RootModule = {
     states: [
         homeState,
         loginState,
+        userListState
     ],
 };
 
@@ -47,8 +49,8 @@ export const routing: RootModule = {
         FooterComponent,
         authenticationModal,
         homeState.component,
-        loginState.component
-
+        loginState.component,
+        userListState.component
     ],
     // define dependencies for all page components
     imports: [

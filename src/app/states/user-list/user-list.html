@@ -1,0 +1,48 @@
+
+<!--<button-->
+    <!--type="submit"-->
+    <!--class="btn btn-sh btn-sh-dark offset-top-2"-->
+    <!--(click)="getList(1)"-->
+        <!--&gt;-->
+    <!--Get list-->
+<!--</button>-->
+<!--<button-->
+    <!--type="submit"-->
+    <!--class="btn btn-sh btn-sh-dark offset-top-2"-->
+    <!--(click)="getList(2)"-->
+        <!--&gt;-->
+    <!--Get list-->
+<!--</button>-->
+<h3 class="text-center">List of users</h3>
+<div class="offset-top-2" *ngIf="userList">
+    <!--{{userList.items[0].name.ENGLISH}}-->
+    <!--<ul *ngFor="let item of userList.items">-->
+        <!--<li>{{ item.name.ENGLISH }}</li>-->
+    <!--</ul>-->
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Id</th>
+                <th>Description</th>
+                <th>{{userList.pagination.size}}</th>
+                <th>{{userList.pagination.total}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of userList.items">
+                <td>{{ item.name.ENGLISH }}</td>
+                <td>{{ item.id }}</td>
+                <td>{{ item.description.ENGLISH }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<ngb-pagination
+    (pageChange)="getList($event)"
+    [pageSize]="pagination.pagination.size"
+    [collectionSize]="pagination.pagination.total"
+    [(page)]="page"
+    aria-label="Default pagination"
+        >
+</ngb-pagination>
